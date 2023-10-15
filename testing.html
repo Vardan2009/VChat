@@ -6,18 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  
+   
     <div class="chat-container">
-     
-        <div id="chat" class="chat">
         
-        <p style="font-style: italic; text-align: center;"> <img src="vchatwhite.png" width="90%"><br>Your conversation starts here</p>
-       
+        <div class="chat">
+            this is a test backup, nothing special
+
+            back to <a href="/">normal page</a>
+            <div class="message">
+                <div class="sender">User 2:</div>
+                <div class="text">Hi there!</div>
+            </div>
+            <div class="message me">
+                <div class="sender sme">User 2:</div>
+                <div class="text">Hi there!</div>
+            </div>
+
         </div>
-        <p id="typing"></p>
-        <p id="replying"></p>
+      
         <div class="input-container">
-         
+            
             <input type="text" id="message-input" placeholder="Type your message">
             <button id="send-button">Send</button>
         </div>
@@ -27,73 +35,32 @@
 
 
 <style>
-  ::-webkit-scrollbar {
-    width: 7px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: rgba(0, 123, 255, 0.8); 
-}
-::-webkit-scrollbar-thumb:window-inactive {
-    background: rgba(0, 98, 255, 0.4); 
-}
   body {
     font-family: Arial, sans-serif;
-    background-color: #232D3F;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color:white;
 }
 
 .chat-container {
     width: 80%;
     height: 80%;
     max-width: 600px;
-    background-color: #27374D;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
 }
-@keyframes fadeFromLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-@keyframes fadeFromRight {
-    0% {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
 
 .chat {
     flex: 1;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: scroll;
+   
     padding: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -102,12 +69,6 @@
 .me{
     text-align: right;
 }
-.anim-fromLeft{
-  animation: fadeFromLeft 0.4s ease-in-out;
-}
-.anim-fromRight{
-  animation: fadeFromRight 0.4s ease-in-out;
-}
 .message {
     margin-bottom: 10px;
 }
@@ -115,7 +76,7 @@
 .sender {
     font-weight: bold;
     margin-right: 5px;
-    color:rgb(0, 119, 255);
+    color:blue;
 }
 .sme
 {
@@ -125,7 +86,7 @@
     padding: 10px;
     display: flex;
     align-items: center;
-    background-color: #27374D;
+    background-color: #f9f9f9;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -134,8 +95,6 @@
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
-    background-color: #27374D;
-    color:white;
     border-radius: 5px;
     outline: none;
 }
