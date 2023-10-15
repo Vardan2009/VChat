@@ -2,6 +2,10 @@ var name="";
 
 var replyingTo = {};
 
+//sounds and stuff
+var notif_sound = new Audio("sounds/notif.mp3")
+
+
 while(name == "")
 {
   name=prompt("Enter your Name...");
@@ -153,7 +157,8 @@ function handleJoined(data)
       }
      
     }
- 
+
+    notif_sound.play()
     chatDiv.appendChild(p);
     smoothScrollToBottom();
 }

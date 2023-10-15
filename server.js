@@ -12,6 +12,7 @@ app.get('/', function (req, res) {
 });
 
 io.on('connection', function (socket) {
+   
     for(var i in messages) {
      
         socket.emit("display message", messages[i]);
@@ -22,7 +23,7 @@ io.on('connection', function (socket) {
         messages.push(data);
        
         io.sockets.emit("display message",  data);
-       
+        require("fs").writeFileSync("messages.json",JSON.stringify(messages))
     });
     socket.on("typing", function (data) {
       io.sockets.emit("display typing",  data);
